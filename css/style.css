@@ -1,0 +1,25 @@
+.input {
+  background-image: url("../files/weatherbg.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+
+form {
+  margin-top: 50vh;
+}
+form input {
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  text-align: center;
+  -moz-box-shadow: 0 0px 20px #273126;
+  -webkit-box-shadow: 0 0px 20px #273126;
+  box-shadow: 0 0px 20px #273126;
+}
+form input:hover {
+  -moz-box-shadow: 0 0px 20px #394e38;
+  -webkit-box-shadow: 0 0px 20px #394e38;
+  box-shadow: 0 0px 20px #394e38;
+}
+
+/*# sourceMappingURL=style.css.map */

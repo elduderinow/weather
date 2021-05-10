@@ -1,0 +1,32 @@
+$shadow-color : #273126;
+$shadow-color-hover : #394e38;
+
+.input {
+  background-image: url("../files/weatherbg.jpg");
+  background-size: cover;
+  height: 100vh;
+
+}
+
+form {
+  margin-top: 50vh;
+
+  input {
+    height: 50px;
+    border-radius: 25px;
+    border:none;
+    text-align: center;
+
+    -moz-box-shadow: 0 0px 20px $shadow-color;
+    -webkit-box-shadow: 0 0px 20px $shadow-color;
+    box-shadow: 0 0px 20px $shadow-color;
+
+    &:hover {
+      -moz-box-shadow: 0 0px 20px $shadow-color-hover;
+      -webkit-box-shadow: 0 0px 20px $shadow-color-hover;
+      box-shadow: 0 0px 20px $shadow-color-hover;
+    }
+
+  }
+}
+
