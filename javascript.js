@@ -10,7 +10,7 @@ let cityMinMax = document.getElementById("minmax");
 const getWeather = async (cityName, countryCode, callback) => {
     // TRY catch to listen for errors if the user input a city and country that's not correct.
     try {
-        const data = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName},${countryCode}&appid=aebc83f1cbbd44b3abb1d008ffe4de33`);
+        const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName},${countryCode}&appid=aebc83f1cbbd44b3abb1d008ffe4de33`);
         const weer = await data.json();
 
         // get the lat & lang info from the first api fetch to parse to the 7 day forecast, which needs a lat & long instead of city name.
