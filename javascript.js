@@ -22,7 +22,7 @@ const getWeather = async (cityName, countryCode, callback) => {
         const forcast = await forcData.json();
 
         // Get the city name and parse through to unsplash to get a random city image.
-        const photoData = await fetch(`https://api.unsplash.com/search/photos?query=${city}-nature&client_id=jvErMAqBHPiiB8YFodzK55IxEvPpxHgXcdNxDgc-Vhs`);
+        const photoData = await fetch(`https://api.unsplash.com/search/photos?query=${city}-nature&client_id=Lgfa96r1w4FjuxvOUFRM-Ya4wz-BQQArBLMN6YwDlaU`);
         const photo = await photoData.json();
 
         // pick a random country based on the html input options to display it as a random first image.
@@ -34,7 +34,7 @@ const getWeather = async (cityName, countryCode, callback) => {
         let random = Math.floor(Math.random() * cntrArr.length);
         let SinglCountries = cntrArr[random];
 
-        const randombgdata = await fetch(`https://api.unsplash.com/search/photos?query=${SinglCountries}&client_id=jvErMAqBHPiiB8YFodzK55IxEvPpxHgXcdNxDgc-Vhs`);
+        const randombgdata = await fetch(`https://api.unsplash.com/search/photos?query=${SinglCountries}&client_id=Lgfa96r1w4FjuxvOUFRM-Ya4wz-BQQArBLMN6YwDlaU`);
         const rndbg = await randombgdata.json();
 
         //putting all the objects together with the spread operator and push the country results in the combine object with another name so it doest get overwritten.
