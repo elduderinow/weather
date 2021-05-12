@@ -11,9 +11,6 @@ let statslist = Array.from(document.getElementsByTagName("li"));
 //Forecast DOMS
 let temp = document.getElementsByTagName("template")[0];
 
-let forecastinner = document.getElementById("foreceastinner");
-
-
 // Get all the APIS w the async func & combine them with the spread operator.
 const getWeather = async (cityName, countryCode, callback) => {
     // TRY catch to listen for errors if the user input a city and country that's not correct.
@@ -81,7 +78,7 @@ function activate() {
     getWeather(cityVal, countryCode, (weathAPI) => {
         convertDate(weathAPI);
         changeUI(weathAPI);
-        changeWeather(weathAPI);
+        changeWeather(countryCode, weathAPI);
         changeForecast(weathAPI);
     });
 }
@@ -98,34 +95,33 @@ function changeForecast(weathAPI) {
     let fcondition;
     let ftemp;
     let fdesc;
-
-    console.log(weathAPI.daily);
-
     daily.forEach((elem, index) => {
         let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         let date = new Date(elem.dt * 1000);
         let day = days[date.getDay()];
         let min = Math.round(elem.temp.min);
         let max = Math.round(elem.temp.max);
-        let condition = elem.weather[0].main.toLowerCase();
         let clon = temp.content.cloneNode(true);
         let desc = elem.weather[0].description;
+        let icon = elem.weather[0].icon;
+
+        console.log(icon);
 
         dayscont.appendChild(clon);
         dayscont.style.transition="0.4s";
-        console.log(dayscont);
         fdays = Array.from(document.querySelectorAll("div .days"));
         fcondition = Array.from(document.querySelectorAll("div .condition"));
         ftemp = Array.from(document.querySelectorAll("div .temp"));
         fdesc = Array.from(document.querySelectorAll("div .desc"));
 
-        fcondition[index].style.backgroundImage=`url("files/${condition}.png")`;
+        fcondition[index].style.backgroundImage=`url("http://openweathermap.org/img/wn/${icon}@2x.png")`;
         fdesc[index].innerHTML=desc;
         fdays[index].innerHTML = day;
         ftemp[index].innerHTML = `${min}° — ${max}°`;
     });
 
     dayscont.style.transform="translateY(-80px)";
+    fdays[0].innerHTML="Tomorrow";
 
 }
 
@@ -146,7 +142,7 @@ function changeUI(weathAPI) {
 }
 
 //func to display the weather for the requested city.
-function changeWeather(weathAPI) {
+function changeWeather(countryCode, weathAPI) {
     let Cname = weathAPI.name;
     cityName.innerHTML = `<h1>${Cname}, ${countryCode}</h1>`;
     cityDeg.innerHTML = Math.round(weathAPI.current.temp) + "°";

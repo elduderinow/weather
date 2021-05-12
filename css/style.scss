@@ -135,8 +135,8 @@ background-position: center center;
         padding:50px 10px;
 
         .condition {
-          width: 80px;
-          height: 80px;
+          width: 100px;
+          height: 100px;
           background-image: url("../files/clouds.png");
           background-size: cover;
           margin: 0 auto;
@@ -180,9 +180,10 @@ background-position: center center;
     }
     select {
       margin:0;
-      width: 75%;
+      width: 60%;
     }
     button {
+      width: 35%;
       margin-right:0;
       padding: 0;
       height: 35px;
