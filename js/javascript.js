@@ -107,7 +107,7 @@ function changeForecast(weathAPI) {
         let day = days[date.getDay()];
         let min = Math.round(elem.temp.min);
         let max = Math.round(elem.temp.max);
-        let condition = elem.weather[0].main;
+        let condition = elem.weather[0].main.toLowerCase();
         let clon = temp.content.cloneNode(true);
         let desc = elem.weather[0].description;
 
