@@ -2,6 +2,7 @@
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
+  overflow: hidden;
 }
 
 nav {
@@ -22,14 +23,24 @@ nav input, nav select, nav button {
 }
 nav input::placeholder, nav select::placeholder, nav button::placeholder {
   color: white;
+  padding-left: 5px;
+}
+nav input:-webkit-autofill,
+nav input:-webkit-autofill:hover,
+nav input:-webkit-autofill:focus,
+nav textarea:-webkit-autofill,
+nav textarea:-webkit-autofill:hover,
+nav textarea:-webkit-autofill:focus,
+nav select:-webkit-autofill,
+nav select:-webkit-autofill:hover,
+nav select:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
 }
 nav input {
   width: 300px;
   float: left;
   margin-left: 100px;
-}
-nav input:enabled {
-  background-color: transparent;
 }
 nav select {
   float: left;
@@ -106,7 +117,7 @@ nav button:hover {
 #details .detailspage .daysforecast .foreceast-inner .condition {
   width: 80px;
   height: 80px;
-  background-image: url("../files/10d.png");
+  background-image: url("../files/clouds.png");
   background-size: cover;
   margin: 0 auto;
   margin-bottom: 10px;

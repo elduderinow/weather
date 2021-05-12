@@ -1,4 +1,3 @@
-let form = document.getElementById("form");
 let error = document.getElementById("error");
 let CountryInput = document.getElementById("countries");
 let cityName = document.getElementById("cityname");
@@ -72,6 +71,7 @@ getWeather(cityVal, countryCode, (weathAPI) => {
 
 //On click button, get all the data and display it.
 document.getElementById("run").addEventListener('click', function () {
+   document.getElementsByTagName("body")[0].style.overflow="scroll";
     activate();
 });
 
@@ -125,7 +125,6 @@ function changeForecast(weathAPI) {
         ftemp[index].innerHTML = `${min}° — ${max}°`;
     });
 
-    let cards = document.querySelectorAll("div.daysforecast");
     dayscont.style.transform="translateY(-80px)";
 
 }
@@ -144,7 +143,6 @@ function changeUI(weathAPI) {
     backG.style.backgroundImage = `url('${unsplashBG}')`;
     document.getElementById("title").style.display="none";
     document.getElementById("statslist").style.height="500px";
-
 }
 
 //func to display the weather for the requested city.
