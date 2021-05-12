@@ -1,31 +1,25 @@
-# The weather application
+# The weather app
 
 ## Practical Information
 
 * Repository: `weather`
+* Link: https://elduderinow.github.io/weather
 
-## The weather APP
+## What is the weather app?
+This weather app displays the weather of your desired location based on city AND country (because there are several cities in the world who share the same name). Plus a 5 day forecast.
 
-* A typical AJAX flow: send asynchronous requests to a remote server and process the results;
-* DOM manipulation: changing the DOM based on results of AJAX-requests.
-* Learn to aggregate data fetched from an api
+## Purpose
+The purpose of this project is to learn to handle fetch API data and manipulate DOM elements.
 
-## Exercise
+## FUNCTIONALITIES
+- query on city and country
+- show current info + 5 day forecast
+- on page load, it the background is each time a random nature (outside) image from a country.
+- on query the background changes to the locations image.
+- smooth animations
+- custom icons for weather forecast
 
-### Sprint 1
+## THE PROJECT
+It was a fun project, super good to learn or to train fetching API's and manipulate the information in the objects. Would add a lot more functionalities, but had no time because I wanted to do both of the excercies. I however put my effort in both of them as good as possible.
 
-- create an account on this [platform](https://home.openweathermap.org/.)
-- You are going to have to generate a key.
-- create a home page where you ask the visitor to enter the city of his choice.
 
-### Sprint 2
-
-- Get the weather data using [axios](https://github.com/axios/axios) or another javascript AJAX enabled library or use the native JS fetch() method
-- Optional: Use a cdn link to link axios to your project.
-- Display the weather for the next 5 days. Show the averages per day.
-- Apply styling to your project using media queries to make it responsive.
-
-## Extra challenges
-
-- Use the API of https://unsplash.com/ to show a photo of the city they entered in the form.
-- Use a graph library like Google Graphs to show a line graph of the temperature over time.

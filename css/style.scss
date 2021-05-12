@@ -1,136 +1,185 @@
-$shadow-color: #273126;
-$shadow-color-hover: #394e38;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,100&display=swap');
 
-#background {
-  background-size: cover;
-  background-position: center top;
-  height: 100vh;
-  width:100%;
-}
-.input {
-height: 100vh;
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
 }
 
-#blackout {
+nav {
   position: absolute;
   width: 100%;
-  height: 100vh;
-  opacity: 0;
-  transition: 1s;
-  background-color: black;
-}
-
-.form-container {
-  position: absolute;
   z-index: 10;
-}
 
-form {
-  margin-top: 48vh;
-  transition: 0.5s;
-
-  #error {
-    color: rgba(255, 0, 0, 0.0);
-  }
-
-  .form-inner {
-    margin: 10px 0;
-  }
-
-  button {
+  input, select, button {
+    font-weight: 300;
     height: 50px;
-    border-radius: 25px;
+    padding: 5px;
+    background-color: transparent;
     border: none;
-    text-align: center;
-    padding: 0 20px;
-    background-color: mediumseagreen;
     color: white;
-    transition: 0.3s;
+    border-bottom: 1px solid white;
+    margin: 0 10px;
+    margin-top: 20px;
 
-    &:hover {
-      background-color: #2a764b;
+    &::placeholder {
+      color:white;
+    }
+  }
+
+  input {
+    width: 300px;
+    float:left;
+    margin-left: 100px;
+    &:enabled {
+      background-color: transparent;
     }
   }
 
   select {
-    width: 200px;
-    height: 50px;
-    border-radius: 25px;
-    border: none;
-    text-align: center;
-    padding: 0 20px;
-    margin: 0 15px;
+    float:left;
+    width: 150px;
+    color:white !important;
   }
 
-  input {
-    min-width: 200px;
-    height: 50px;
-    border-radius: 25px;
-    border: none;
-    text-align: center;
+  button {
+    width: 100px;
+    background-color: blue;
+    color: white;
+    float:right;
+    margin-right: 100px;
+    border-bottom:0px;
+    border-radius: 50px;
+    transition: 0.3s;
 
-
-  }
-}
-
-.stats {
-  ul {
-    padding-left: 0px;
-
-    li {
-      list-style-type: none;
-      color: white;
-    }
-
-    #cityname h1 {
-      font-size: 2.2rem;
-    }
-
-    #date {
-      font-size: 1.3rem;
-    }
-
-    #degrees {
-      font-size: 5rem;
-    }
-
-    #divider {
-      margin: 0 auto;
-      width: 180px;
-      border-top:2px solid white;
-      padding:10px 0;
-    }
-
-    #condition {
-      font-size: 1.3rem;
-    }
-
-    #minmax {
-      font-size: 1.3rem;
+    &:hover {
+      background-color: #0b0bcb;
     }
   }
 
-
 }
 
-.weather {
-  display: none;
-}
+#weather {
+background-size: cover;
+background-position: center center;
 
-#target table {
-  margin:0 auto;
-  height: 400px;
-  margin-top:50px;
-  color:white;
+  .title {
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    font-size:4rem;
+    color:white;
+    font-weight: 300;
+  }
 
-  td {
-    height: 60px;
-    padding:0 30px;
-    &:first-child {
-      text-align: left;
-    }
-    &:last-child {
-      text-align: right;
+  .stats {
+    background: rgba(0,0,0,0.4);
+    #statslist {
+
+      background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 31%);
+
+      padding: 50px 100px;
+      height:89vh;
+      margin:0;
+      margin-top: 100px;
+
+
+      li {
+        transition: 0.3s;
+        color:transparent;
+        transform:translateX(100px);
+        text-align: left;
+        list-style-type: none;
+
+        &#cityname h1 {
+          font-weight: 300 !important;
+          font-size: 4rem;
+        }
+
+        &#date {
+          font-size: 1.5rem;
+
+        }
+      }
     }
   }
 }
+
+#details {
+  padding:20px 100px;
+  .detailspage {
+
+    .daysforecast {
+      transition: 1s;
+      text-align: center;
+      float:left;
+      padding:10px;
+
+      .foreceast-inner {
+        border-radius: 5px;
+        background-color: white;
+        padding:50px 10px;
+
+        .condition {
+          width: 80px;
+          height: 80px;
+          background-image: url("../files/10d.png");
+          background-size: cover;
+          margin: 0 auto;
+          margin-bottom:10px;
+        }
+
+        .desc {
+          font-weight: 300;
+          text-transform: capitalize;
+        }
+
+        .days {
+          margin-top: 15px;
+          font-size: 1.6rem;
+          font-weight: 300;
+          color:blue;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+
+
+  .stats {
+    #statslist {
+      padding: 100px 20px !important;
+      ul {
+        padding-top: 100px !important;
+      }
+    }
+  }
+
+  nav {
+    form {
+      padding:20px;
+    }
+    input {
+     margin:0;
+      width: 100%;
+    }
+    select {
+      margin:0;
+      width: 75%;
+    }
+    button {
+      margin-right:0;
+      padding: 0;
+      height: 35px;
+    }
+  }
+
+  #details {
+    padding:20px 20px;
+  }
+
+}
+
