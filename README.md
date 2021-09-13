@@ -3,7 +3,7 @@
 ## Practical Information
 
 * Repository: `weather`
-* Link: https://elduderinow.github.io/weather
+* Demo: http://weather.yarrut.com/
 
 ## What is the weather app?
 This weather app displays the weather of your desired location based on city AND country (because there are several cities in the world who share the same name). Plus a 5 day forecast.
@@ -20,6 +20,8 @@ The purpose of this project is to learn to handle fetch API data and manipulate 
 - custom icons for weather forecast
 
 ## THE PROJECT
-It was a fun project, super good to learn or to train fetching API's and manipulate the information in the objects. Would add a lot more functionalities, but had no time because I wanted to do both of the excercies. I however put my effort in both of them as good as possible.
+It was a fun project, super good to learn or to train fetching API's and manipulate the information in the objects. 
+Would add a lot more functionalities, but had no time because I wanted to do both of the excercies. 
+I however put my effort in both of them as good as possible.
 
 
